@@ -46,8 +46,6 @@ card.append(cardImage, cardContent);
 
 document.body.appendChild(card);
 
-
-
 const style = document.createElement("style");
 style.textContent = `
   body {
@@ -60,13 +58,19 @@ style.textContent = `
     margin: 0;
   }
 
- .card {
+  .card {
     background: white;
     border-radius: 12px;
-    box-shadow:  8px 10px;
+    box-shadow: 8px 10px;
     width: 350px;
     overflow: hidden;
-}
+    transition: transform 0.2s ease-in-out;
+  }
+
+   .card:active {
+    box-shadow: 13px 14px;
+    transition: all ease-in-out 0.4s;
+  }
 
   .card-image {
     margin-top: 10px;
@@ -75,6 +79,7 @@ style.textContent = `
   }
 
   .card-content {
+    transition: all ease-in-out 0.4s;
     padding: 16px;
   }
 
@@ -96,9 +101,15 @@ style.textContent = `
   }
 
   .card-title {
+    cursor: pointer;
     font-size: 18px;
     margin: 8px 0;
     color: black;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .card-title:active {
+    color: #FFD700;
   }
 
   .card-description {
